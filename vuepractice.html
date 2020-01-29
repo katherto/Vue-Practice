@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Vue.js Practice</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="app1" v-bind:style="style">
+                <h1>{{ message }}</h1>
+                <button v-on:click="message = 'Oh neat this worked!'">Change the Text</button>
+                <button v-on:click="displayAlert">Display an Alert</button>
+                <button v-on:click="style = 'background-color: #FF6A50'">Change BG Color</button></br></br>
+                <a v-bind:[attrname]="url" style="color: #ffffff">Click here to go some place</a>
+                <button v-on:click="url = 'http://www.google.com'">Change URL</button>
+                <p>Original message: "{{ message }}"</p>
+                <p>Reversed message: "{{ reverseMessage }}"</p>
+            </div>
+        </div>
+        <script>
+            // creates the data object. after creating the Vue instance changing these values directly or in the instance will update them in both places
+            let data = {
+                message: "Doing some Vue practice!",
+                style: "background-color: #85E3FF",
+                url: "http://www.twitch.tv",
+                attrname: "href"
+            }
+
+            // creates a new Vue instance
+            let app1 = new Vue({
+                data: data,
+                methods: {
+                    displayAlert: function() {
+                        alert("Yo this worked");
+                    }
+                },
+                computed: {
+                    reverseMessage: function() {
+                        return this.message.split("").reverse().join("");
+                    }
+                }
+            });
+
+            // can either mount the VM instance this way or by including the "el" option when creating the new Vue instance
+            app1.$mount(document.getElementById("app1"));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link rel="stylesheet" href="https://unpkg.com/bulma/css/bulma.css" type="text/css">
+        <title>Computed Properties Practice</title>
+    </head>
+    <body>
+        <div id="app">
+            <div class="field">
+                <label class="label">Seconds</label>
+                <input v-model="seconds"
+                        class="input"
+                        type="number"
+                        min="0">
+            </div>
+            <div class="field">
+                <label class="label">Hours</label>
+                <input v-model="hours"
+                        class="input"
+                        type="number"
+                        min="0">
+            </div>
+            <div class="field">
+                <label class="label">Days</label>
+                <input v-model="days"
+                        class="input"
+                        type="number"
+                        min="0">
+            </div>
+            <div class="field">
+                <label class="label">Years</label>
+                <input v-model="years"
+                        class="input"
+                        type="number"
+                        min="0">
+            </div>
+        </div>
+        <script src="https://unpkg.com/vue"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

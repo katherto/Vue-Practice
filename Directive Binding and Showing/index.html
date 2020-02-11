@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+        <div id="app">
+            <h2>Hello World!</h2>
+            <p>This app brought to you by {{ firstName + ' ' + lastName }}</p>
+            <figure>
+                <!--:src is the shorthand for v-bind:src-->
+                <img :src="cityImage">
+                <!--v-if and v-show are functionally similar, but v-if only renders content when the expression is true (show renders all content and could be more taxing-->
+                <figcaption v-if="cityName === 'Kansas'">I live in Kansas, the Sunflower State!</figcaption>
+                <figcaption v-if="cityName === 'Washington'">I'd like to live in the state of Washington some day!</figcaption>
+            </figure>
+            <!--@click is the shorthand for v-on:click-->
+            <button @click="changeGreeting">Change Greeting</button>
+        </div>
+        <script src="https://unpkg.com/vue"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

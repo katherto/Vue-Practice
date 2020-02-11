@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="item in groceries" :key="item.id">
+                    <p>{{ item.name }}</p>
+                    <input type="text">
+                </li>
+            </ul>
+            <input type="button" @click="spillGroceries" value="Spill the Groceries!">
+        </div>
+        <script src="https://unpkg.com/vue"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash/lodash.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

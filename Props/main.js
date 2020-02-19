@@ -1,29 +1,45 @@
 const states = [
   {
     id: 0,
-    name: "Kansas"
+    name: "Select State"
   },
   {
     id: 1,
-    name: "California"
+    name: "Kansas"
   },
   {
     id: 2,
-    name: "Florida"
+    name: "California"
   },
   {
     id: 3,
-    name: "Texas"
+    name: "Florida"
   },
   {
     id: 4,
+    name: "Texas"
+  },
+  {
+    id: 5,
     name: "Oklahoma"
   }
 ];
 
-Vue.component('h1-component', {
+Vue.component('select-component', {
   template: `
-    <h1>{{state.name}}</h1>
+    <select>
+      <option-component v-for="state in states"
+        :id="state.id"
+        :state="state">
+      </option-component>
+    </select>
+  `,
+  props: ['states']
+});
+
+Vue.component('option-component', {
+  template: `
+    <option>{{state.name}}</option>
   `,
   props: ['state']
 });

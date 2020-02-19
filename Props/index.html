@@ -7,10 +7,7 @@
 </head>
 <body>
   <div id="app">
-    <h1-component v-for="state in states"
-      :key="state.id"
-      :state="state">
-    </h1-component>
+    <select-component :states="states"></select-component>
   </div>
 
   <script src="https://unpkg.com/vue"></script>

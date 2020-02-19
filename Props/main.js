@@ -29,7 +29,7 @@ Vue.component('select-component', {
   template: `
     <select>
       <option-component v-for="state in states"
-        :id="state.id"
+        :key="state.id"
         :state="state">
       </option-component>
     </select>
